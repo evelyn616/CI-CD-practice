@@ -25,3 +25,8 @@ def test_add(client):
     res = client.get("/add/3/4")
     assert res.status_code == 200
     assert res.get_json()["result"] == 7
+
+def test_multiply(client):
+    res = client.get("/multiply/3/4")
+    assert res.status_code == 200
+    assert res.get_json()["result"] == 12
